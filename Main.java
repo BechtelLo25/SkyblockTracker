@@ -38,13 +38,13 @@ public class Main {
                     textArea.setText("");
                     skyblockTracker.playerID = loganMC618PlayerUuid;
                     textArea.append("Logan selected!\nPlayer Uuid: " + skyblockTracker.playerID + "\n");
-                    textArea.append(skyblockTracker.getFiveAuctions());
+                    textArea.append(skyblockTracker.getTenAuctions());
                 }
                 else {
                     textArea.setText("");
                     skyblockTracker.playerID = ktf_PartyPlayerUuid;
                     textArea.append("Zack selected!\nPlayer Uuid: " + skyblockTracker.playerID + "\n");
-                    textArea.append(skyblockTracker.getFiveAuctions());
+                    textArea.append(skyblockTracker.getTenAuctions());
                 }
             }
         });

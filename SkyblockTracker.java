@@ -7,7 +7,7 @@ public class SkyblockTracker {
 
     public String playerID;
 
-    public String getFiveAuctions() {
+    public String getTenAuctions() {
         String apiUrl = "https://sky.coflnet.com/api/player/" + playerID + "/auctions?page=0&=string&=string&=string";
 
         try {
@@ -35,6 +35,16 @@ public class SkyblockTracker {
             String fourthAuctionInfo = afterThirdAuctionInfo.substring(0, afterThirdAuctionInfo.indexOf("bin") + 11);
             String afterFourthAuctionInfo = afterThirdAuctionInfo.substring(fourthAuctionInfo.length());
             String fifthAuctionInfo = afterFourthAuctionInfo.substring(0, afterFourthAuctionInfo.indexOf("bin") + 11);
+            String afterFifthAuctionInfo = afterFourthAuctionInfo.substring(fifthAuctionInfo.length());
+            String sixthAuctionInfo = afterFifthAuctionInfo.substring(0, afterFifthAuctionInfo.indexOf("bin") + 11);
+            String afterSixthAuctionInfo = afterFifthAuctionInfo.substring(sixthAuctionInfo.length());
+            String seventhAuctionInfo = afterSixthAuctionInfo.substring(0, afterSixthAuctionInfo.indexOf("bin") + 11);
+            String afterSeventhAuctionInfo = afterSixthAuctionInfo.substring(seventhAuctionInfo.length());
+            String eighthAuctionInfo = afterSeventhAuctionInfo.substring(0, afterSeventhAuctionInfo.indexOf("bin") + 11);
+            String afterEighthAuctionInfo = afterSeventhAuctionInfo.substring(eighthAuctionInfo.length());
+            String ninthAuctionInfo = afterEighthAuctionInfo.substring(0, afterEighthAuctionInfo.indexOf("bin") + 11);
+            String afterNinthAuctionInfo = afterEighthAuctionInfo.substring(ninthAuctionInfo.length());
+            String tenthAuctionInfo = afterNinthAuctionInfo.substring(0, afterNinthAuctionInfo.indexOf("bin") + 11);
 
             // Each of these strings are the name of the item that is being sold
             String firstAuction = (firstAuctionInfo.substring(firstAuctionInfo.indexOf("itemName") + 11, firstAuctionInfo.indexOf("tag") - 3)) + " - ";
@@ -42,6 +52,11 @@ public class SkyblockTracker {
             String thirdAuction = (thirdAuctionInfo.substring(thirdAuctionInfo.indexOf("itemName") + 11, thirdAuctionInfo.indexOf("tag") - 3)) + " - ";
             String fourthAuction = (fourthAuctionInfo.substring(fourthAuctionInfo.indexOf("itemName") + 11, fourthAuctionInfo.indexOf("tag") - 3)) + " - ";
             String fifthAuction = (fifthAuctionInfo.substring(fifthAuctionInfo.indexOf("itemName") + 11, fifthAuctionInfo.indexOf("tag") - 3)) + " - ";
+            String sixthAuction = (sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("itemName") + 11, sixthAuctionInfo.indexOf("tag") - 3)) + " - ";
+            String seventhAuction = (seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("itemName") + 11, seventhAuctionInfo.indexOf("tag") - 3)) + " - ";
+            String eighthAuction = (eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("itemName") + 11, eighthAuctionInfo.indexOf("tag") - 3)) + " - ";
+            String ninthAuction = (ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("itemName") + 11, ninthAuctionInfo.indexOf("tag") - 3)) + " - ";
+            String tenthAuction = (tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("itemName") + 11, tenthAuctionInfo.indexOf("tag") - 3)) + " - ";
 
             // If statements that decide if the items have sold or not
             if(firstAuctionInfo.substring(firstAuctionInfo.indexOf("highestBid") + 12, firstAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
@@ -79,7 +94,37 @@ public class SkyblockTracker {
                 fifthAuction += "Sold for " + fifthAuctionInfo.substring(fifthAuctionInfo.indexOf("highestBid") + 12, fifthAuctionInfo.indexOf("itemName") - 2) + "\n";
             }
 
-            return firstAuction + secondAuction + thirdAuction + fourthAuction + fifthAuction;
+            if (sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("highestBid") + 12, sixthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
+                sixthAuction += "Has not sold\n";
+            } else {
+                sixthAuction += "Sold for " + sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("highestBid") + 12, sixthAuctionInfo.indexOf("itemName") - 2) + "\n";
+            }
+
+            if (seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("highestBid") + 12, seventhAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
+                seventhAuction += "Has not sold\n";
+            } else {
+                seventhAuction += "Sold for " + seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("highestBid") + 12, seventhAuctionInfo.indexOf("itemName") - 2) + "\n";
+            }
+
+            if (eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("highestBid") + 12, eighthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
+                eighthAuction += "Has not sold\n";
+            } else {
+                eighthAuction += "Sold for " + eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("highestBid") + 12, eighthAuctionInfo.indexOf("itemName") - 2) + "\n";
+            }
+
+            if (ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("highestBid") + 12, ninthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
+                ninthAuction += "Has not sold\n";
+            } else {
+                ninthAuction += "Sold for " + ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("highestBid") + 12, ninthAuctionInfo.indexOf("itemName") - 2) + "\n";
+            }
+
+            if (tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("highestBid") + 12, tenthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
+                tenthAuction += "Has not sold\n";
+            } else {
+                tenthAuction += "Sold for " + tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("highestBid") + 12, tenthAuctionInfo.indexOf("itemName") - 2) + "\n";
+            }
+            
+            return firstAuction + secondAuction + thirdAuction + fourthAuction + fifthAuction + sixthAuction + seventhAuction + eighthAuction + ninthAuction + tenthAuction;
 
         } catch (Exception e) {
             e.printStackTrace();
