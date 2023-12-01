@@ -1,4 +1,3 @@
-import javax.swing.*;
 import java.awt.*;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -11,7 +10,6 @@ import java.awt.Font;
 import java.awt.GradientPaint;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.Ellipse2D;
 
 public class Main {
 
@@ -50,10 +48,10 @@ public class Main {
 
         JComboBox<String> dropdown = new JComboBox<>(items);
         JTextArea textArea = new JTextArea();
-        textArea.setBackground(Color.DARK_GRAY);
-        textArea.setForeground(Color.WHITE);
+        
         textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
         
+        // Dropdown
         dropdown.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -78,12 +76,15 @@ public class Main {
             }
         });
 
-        Font customFont = new Font("Trebuchet MS", Font.PLAIN, 14); // You can customize the font here
-        textArea.setFont(customFont);
-        textArea.setBorder(new LineBorder(Color.WHITE, 2));
+        Font customFont = new Font("Trebuchet MS", Font.PLAIN, 14);
         
+        // Add and set everything
         panel.add(dropdown);
         panel.add(textArea);
+        textArea.setBackground(Color.DARK_GRAY);
+        textArea.setForeground(Color.WHITE);
+        textArea.setFont(customFont);
+        textArea.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));
