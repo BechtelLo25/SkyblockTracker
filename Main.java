@@ -28,6 +28,8 @@ public class Main {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
 
+        skyblockTracker.getUuid("LoganMC618");
+
         JPanel panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -44,10 +46,11 @@ public class Main {
         String[] items = {"Select Player", "LoganMC618", "Ktf_Party"};
 
         // Initializing JFrame Components
-        JComboBox<String> dropdown = new JComboBox<>(items);
+        JTextArea playerSelect = new JTextArea();
         JTextArea textArea = new JTextArea();
         JButton runButton = new JButton("Run");
 
+        playerSelect.append("Insert MC Username");
         textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
 
         // Add action listener to the button
@@ -57,37 +60,31 @@ public class Main {
 
                 String text = textArea.getText();
 
-                if ("LoganMC618".equals(dropdown.getSelectedItem())) {
                     textArea.setText("");
-                    skyblockTracker.playerID = loganMC618PlayerUuid;
+                    skyblockTracker.playerID = skyblockTracker.getUuid(playerSelect.getText());
                     textArea.append("Logan selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
                     textArea.append("Ten Mose Recent Auctions: \n\n");
                     textArea.append(skyblockTracker.getTenAuctions());
-                }
-
-                else if ("Ktf_Party".equals(dropdown.getSelectedItem())) {
-                    textArea.setText("");
-                    skyblockTracker.playerID = ktf_PartyPlayerUuid;
-                    textArea.append("Zack selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
-                    textArea.append("Ten Mose Recent Auctions: \n\n");
-                    textArea.append(skyblockTracker.getTenAuctions());
-                }
-                else {
-                    textArea.setText("No one is selected dummy");
-                }
+                
             }
         });
 
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
         // Add and set everything
-        panel.add(dropdown);
+        panel.add(playerSelect);
+        panel.add(playerSelect);
         panel.add(textArea);
+        
         panel.add(runButton);
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.WHITE);
         textArea.setFont(customFont);
         textArea.setBorder(new LineBorder(Color.WHITE, 2));
+        playerSelect.setBackground(Color.DARK_GRAY);
+        playerSelect.setForeground(Color.WHITE);
+        playerSelect.setFont(customFont);
+        playerSelect.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));

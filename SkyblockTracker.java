@@ -7,6 +7,32 @@ public class SkyblockTracker {
 
     public String playerID;
 
+    public String getUuid(String name) {
+        
+        String apiUrl = "https://sky.coflnet.com/api/search/player/" + name;
+
+        try {
+            // Create an HttpClient
+            HttpClient client = HttpClient.newHttpClient();
+    
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(apiUrl))
+                    .header("accept", "text/plain")
+                    .GET()
+                    .build();
+    
+            // Send the request and receive the response
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            return response.body().substring(response.body().indexOf("uuid") + 7, response.body().indexOf("hitCount") - 3);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    
+        return "Connect to wifi dummy";
+    }
+
     public String getTenAuctions() {
         String apiUrl = "https://sky.coflnet.com/api/player/" + playerID + "/auctions?page=0&=string&=string&=string";
 
