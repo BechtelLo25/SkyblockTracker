@@ -1,13 +1,12 @@
 import java.awt.*;
+
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.GradientPaint;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -34,29 +33,32 @@ public class Main {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
 
-                // Create a gradient from gray to black
-                GradientPaint gradient = new GradientPaint(100, 100, new Color(70, 70, 70), getWidth(), getHeight(), Color.BLACK);
+                GradientPaint gradient = new GradientPaint(100, 100, new Color(0, 150, 0), getWidth(), getHeight(), new Color(200, 255, 200));
 
-                // Set the gradient paint
                 ((Graphics2D) g).setPaint(gradient);
 
-                // Fill the panel with the gradient
                 g.fillRect(0, 0, getWidth(), getHeight());
             }
         };;
 
         String[] items = {"Select Player", "LoganMC618", "Ktf_Party"};
 
+        // Initializing JFrame Components
         JComboBox<String> dropdown = new JComboBox<>(items);
         JTextArea textArea = new JTextArea();
-        
+        JButton runButton = new JButton("Run");
+
         textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
+
         
-        // Dropdown
-        dropdown.addActionListener(new ActionListener() {
+
+        // Add action listener to the button
+        runButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Check if "Item 1" is selected
+
+                String text = textArea.getText();
+
                 if ("LoganMC618".equals(dropdown.getSelectedItem())) {
                     textArea.setText("");
                     skyblockTracker.playerID = loganMC618PlayerUuid;
@@ -64,6 +66,7 @@ public class Main {
                     textArea.append("Ten Mose Recent Auctions: \n\n");
                     textArea.append(skyblockTracker.getTenAuctions());
                 }
+
                 else if ("Ktf_Party".equals(dropdown.getSelectedItem())) {
                     textArea.setText("");
                     skyblockTracker.playerID = ktf_PartyPlayerUuid;
@@ -82,6 +85,7 @@ public class Main {
         // Add and set everything
         panel.add(dropdown);
         panel.add(textArea);
+        panel.add(runButton);
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.WHITE);
         textArea.setFont(customFont);
