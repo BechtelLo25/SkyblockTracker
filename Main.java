@@ -2,7 +2,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,10 +11,10 @@ public class Main {
     public static String ktf_PartyPlayerUuid = "0a8cd993831c45838569a160aeb1a44e";
 
     static SkyblockTracker skyblockTracker = new SkyblockTracker();
-
     public static void main(String[] args) {
 
-        SwingUtilities.invokeLater(() -> createAndShowGUI());
+        createAndShowGUI();
+
     }
 
     private static void createAndShowGUI() {
