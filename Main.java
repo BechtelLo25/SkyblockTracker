@@ -33,7 +33,7 @@ public class Main {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
 
-                GradientPaint gradient = new GradientPaint(100, 100, new Color(0, 150, 0), getWidth(), getHeight(), new Color(200, 255, 200));
+                GradientPaint gradient = new GradientPaint(100, 100, new Color(0, 120, 0), getWidth(), getHeight(), new Color(150, 255, 150));
 
                 ((Graphics2D) g).setPaint(gradient);
 
@@ -49,8 +49,6 @@ public class Main {
         JButton runButton = new JButton("Run");
 
         textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
-
-        
 
         // Add action listener to the button
         runButton.addActionListener(new ActionListener() {
@@ -80,7 +78,7 @@ public class Main {
             }
         });
 
-        Font customFont = new Font("Trebuchet MS", Font.PLAIN, 14);
+        Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
         // Add and set everything
         panel.add(dropdown);
