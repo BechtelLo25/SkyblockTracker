@@ -17,6 +17,7 @@ public class Main {
     public static String ktf_PartyPlayerUuid = "0a8cd993831c45838569a160aeb1a44e";
 
     static SkyblockTracker skyblockTracker = new SkyblockTracker();
+    
     public static void main(String[] args) {
 
         createAndShowJframe();
