@@ -62,7 +62,7 @@ public class Main {
 
                     textArea.setText("");
                     skyblockTracker.playerID = skyblockTracker.getUuid(playerSelect.getText());
-                    textArea.append("Logan selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
+                    textArea.append(playerSelect.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
                     textArea.append("Ten Mose Recent Auctions: \n\n");
                     textArea.append(skyblockTracker.getTenAuctions());
                 
