@@ -258,3 +258,24 @@ Launcher:	C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin\javaw.exe
 Launcher args:	-jar "C:\Users\logan\OneDrive\Documents\SkyblockTracker\SkyblockTracker.exe"
 Args length:	76/32768 chars
 Exit code:	0
+
+
+Version:	3.50
+CmdLine:	C:\Users\logan\OneDrive\Documents\SkyblockTracker\SkyblockTracker.exe --l4j-debug
+JNI:		No
+WOW64:		Yes
+Working dir:	C:\Users\logan\OneDrive\Documents\SkyblockTracker\.
+Requires JDK:	No
+Requires 64-Bit: No
+Java min ver:	
+Java max ver:	
+Substitute:	JAVA_HOME = 
+Substitute:	PATH = C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\logan\AppData\Local\Microsoft\WindowsApps;C:\Users\logan\AppData\Local\GitHubDesktop\bin;C:\Users\logan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python27\Scripts;;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin
+JRE paths:	;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Users\logan\AppData\Local\Microsoft\WindowsApps;C:\Users\logan\AppData\Local\GitHubDesktop\bin;C:\Users\logan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Python27\Scripts;;C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin
+Check launcher:	C:\Program Files\Common Files\Oracle\Java\javapath\bin\javaw.exe (not found)
+Check launcher:	C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin\javaw.exe (OK)
+Version string: 1.011.000_018 / 64-Bit (OK)
+Launcher:	C:\Program Files\Eclipse Adoptium\jdk-11.0.18.10-hotspot\bin\javaw.exe
+Launcher args:	-jar "C:\Users\logan\OneDrive\Documents\SkyblockTracker\SkyblockTracker.exe"
+Args length:	76/32768 chars
+Exit code:	0
