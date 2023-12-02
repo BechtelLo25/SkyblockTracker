@@ -11,11 +11,7 @@ import java.awt.event.ActionListener;
 
 public class Main {
 
-    public static String loganMC618PlayerUuid = "ccf6bfb290e142f591722f1a1a69133b";
-    public static String ktf_PartyPlayerUuid = "0a8cd993831c45838569a160aeb1a44e";
-
     static SkyblockTracker skyblockTracker = new SkyblockTracker();
-    
     public static void main(String[] args) {
 
         createAndShowJframe();
@@ -26,8 +22,6 @@ public class Main {
         JFrame frame = new JFrame("Logan's Auction Tracker");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000, 600);
-
-        skyblockTracker.getUuid("LoganMC618");
 
         JPanel panel = new JPanel() {
             @Override
@@ -56,8 +50,6 @@ public class Main {
         runButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                String text = textArea.getText();
 
                     textArea.setText("");
                     skyblockTracker.playerID = skyblockTracker.getUuid(playerSelect.getText());
