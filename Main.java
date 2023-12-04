@@ -12,7 +12,7 @@ public class Main {
     static Jframe jframe = new Jframe();
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Skyblock Tracker");
+        JFrame frame = new JFrame("Logan's Skyblock Tracker");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JButton auctionButton = new JButton("Auction Tracker");
@@ -34,7 +34,15 @@ public class Main {
         auctionButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                jframe.createAndShowJframe();
+                jframe.createAuctionTrackerJframe();
+                frame.dispose();
+            }
+        });
+
+        lowestBinButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jframe.createLowestBinJframe();
                 frame.dispose();
             }
         });
