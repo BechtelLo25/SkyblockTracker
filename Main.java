@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
+import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,10 +44,22 @@ public class Main {
         // Initializing JFrame Components
         JTextArea playerSelect = new JTextArea();
         JTextArea textArea = new JTextArea();
-        JButton runButton = new JButton("Run");
+        JButton runButton = new JButton(" Run ");
+        JTextArea itemSelect = new JTextArea();
 
         playerSelect.append("Insert MC Username");
         textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
+        itemSelect.append("lalalllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
+
+        playerSelect.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Check if the mouse event occurred within the JTextArea
+                if (playerSelect.getBounds().contains(e.getPoint())) {
+                    playerSelect.setText(" ");
+                }
+            }
+        });
 
         // Add action listener to the button
         runButton.addActionListener(new ActionListener() {
@@ -66,8 +81,8 @@ public class Main {
         panel.add(playerSelect);
         panel.add(playerSelect);
         panel.add(textArea);
-        
         panel.add(runButton);
+        panel.add(itemSelect);
         textArea.setBackground(Color.DARK_GRAY);
         textArea.setForeground(Color.WHITE);
         textArea.setFont(customFont);
@@ -76,6 +91,10 @@ public class Main {
         playerSelect.setForeground(Color.WHITE);
         playerSelect.setFont(customFont);
         playerSelect.setBorder(new LineBorder(Color.WHITE, 2));
+        runButton.setBackground(Color.DARK_GRAY);
+        runButton.setForeground(Color.WHITE);
+        runButton.setFont(customFont);
+        runButton.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));

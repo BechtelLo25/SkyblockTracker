@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Testing {
     public static void main(String[] args) {
@@ -10,35 +8,22 @@ public class Testing {
     }
 
     private static void createAndShowGUI() {
-        JFrame frame = new JFrame("Text Box App");
+        JFrame frame = new JFrame("Positioned Component Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // Set the layout manager to null for absolute positioning
+        frame.setLayout(null);
+
         // Create a text field
-        JTextField textField = new JTextField(20);
+        JTextField textField = new JTextField();
+        // Set the position and size of the text field
+        textField.setBounds(150, 100, 150, 25);
 
-        // Create a button
-        JButton runButton = new JButton("Run");
-
-        // Add action listener to the button
-        runButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Get the text from the text field and print it
-                String text = textField.getText();
-                System.out.println("Text from text box: " + text);
-            }
-        });
-
-        // Create a panel and add components to it
-        JPanel panel = new JPanel();
-        panel.add(textField);
-        panel.add(runButton);
-
-        // Add the panel to the content pane of the frame
-        frame.getContentPane().add(panel);
+        // Add the text field to the frame
+        frame.add(textField);
 
         // Set the size of the frame
-        frame.setSize(300, 150);
+        frame.setSize(400, 300);
 
         // Center the frame on the screen
         frame.setLocationRelativeTo(null);
