@@ -4,6 +4,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -38,6 +39,7 @@ public class Jframe {
         JTextArea playerSelect = new JTextArea();
         JTextArea auctionOutput = new JTextArea();
         JButton runButton = new JButton(" Run ");
+        JButton backButton = new JButton(" Back ");
 
         playerSelect.append("Insert MC Username");
         auctionOutput.append("Welcome to Logan's skyblock tracker! Select a player to track.");
@@ -66,13 +68,25 @@ public class Jframe {
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Main.main(null);
+                frame.dispose();
+
+            }
+        });
+
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
+        Font backButtonFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
         // Add and set everything
         panel.add(playerSelect);
         panel.add(playerSelect);
         panel.add(auctionOutput);
         panel.add(runButton);
+        panel.add(backButton, BorderLayout.SOUTH);
         auctionOutput.setBackground(Color.DARK_GRAY);
         auctionOutput.setForeground(Color.WHITE);
         auctionOutput.setFont(customFont);
@@ -85,6 +99,10 @@ public class Jframe {
         runButton.setForeground(Color.WHITE);
         runButton.setFont(customFont);
         runButton.setBorder(new LineBorder(Color.WHITE, 2));
+        backButton.setBackground(Color.DARK_GRAY);
+        backButton.setForeground(Color.WHITE);
+        backButton.setFont(backButtonFont);
+        backButton.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));
@@ -114,6 +132,7 @@ public class Jframe {
         JTextArea itemSelect = new JTextArea();
         JTextArea itemOutput = new JTextArea();
         JButton runButton = new JButton(" Run ");
+        JButton backButton = new JButton(" Back ");
 
         itemSelect.append("Insert Item Name");
         itemOutput.append("Welcome to Logan's Lowest Bin Tracker! Select an Item to Track.");
@@ -142,6 +161,16 @@ public class Jframe {
             }
         });
 
+        backButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                Main.main(null);
+                frame.dispose();
+
+            }
+        });
+
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
         // Add and set everything
@@ -149,6 +178,7 @@ public class Jframe {
         panel.add(itemSelect);
         panel.add(itemOutput);
         panel.add(runButton);
+        panel.add(backButton, BorderLayout.SOUTH);
         itemOutput.setBackground(Color.DARK_GRAY);
         itemOutput.setForeground(Color.WHITE);
         itemOutput.setFont(customFont);
@@ -161,6 +191,10 @@ public class Jframe {
         runButton.setForeground(Color.WHITE);
         runButton.setFont(customFont);
         runButton.setBorder(new LineBorder(Color.WHITE, 2));
+        backButton.setBackground(Color.DARK_GRAY);
+        backButton.setForeground(Color.WHITE);
+        backButton.setFont(customFont);
+        backButton.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));
@@ -168,3 +202,4 @@ public class Jframe {
 
     }
 }
+

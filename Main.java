@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 public class Main {
 
     static Jframe jframe = new Jframe();
+
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Logan's Skyblock Tracker");
