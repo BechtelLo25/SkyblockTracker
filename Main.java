@@ -39,8 +39,6 @@ public class Main {
             }
         };;
 
-        String[] items = {"Select Player", "LoganMC618", "Ktf_Party"};
-
         // Initializing JFrame Components
         JTextArea playerSelect = new JTextArea();
         JTextArea auctionOutput = new JTextArea();
@@ -56,7 +54,7 @@ public class Main {
             public void mouseClicked(MouseEvent e) {
                 // Check if the mouse event occurred within the JTextArea
                 if (playerSelect.getBounds().contains(e.getPoint())) {
-                    playerSelect.setText(" ");
+                    playerSelect.setText("");
                 }
             }
         });
