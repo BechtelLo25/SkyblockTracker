@@ -43,11 +43,9 @@ public class Main {
         JTextArea playerSelect = new JTextArea();
         JTextArea auctionOutput = new JTextArea();
         JButton runButton = new JButton(" Run ");
-        JTextArea itemSelect = new JTextArea();
 
         playerSelect.append("Insert MC Username");
         auctionOutput.append("Welcome to Logan's skyblock tracker! Select a player to track.");
-        itemSelect.append("lalalllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
 
         playerSelect.addMouseListener(new MouseAdapter() {
             @Override
@@ -80,7 +78,6 @@ public class Main {
         panel.add(playerSelect);
         panel.add(auctionOutput);
         panel.add(runButton);
-        panel.add(itemSelect);
         auctionOutput.setBackground(Color.DARK_GRAY);
         auctionOutput.setForeground(Color.WHITE);
         auctionOutput.setFont(customFont);
