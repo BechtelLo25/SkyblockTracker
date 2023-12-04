@@ -43,12 +43,12 @@ public class Main {
 
         // Initializing JFrame Components
         JTextArea playerSelect = new JTextArea();
-        JTextArea textArea = new JTextArea();
+        JTextArea auctionOutput = new JTextArea();
         JButton runButton = new JButton(" Run ");
         JTextArea itemSelect = new JTextArea();
 
         playerSelect.append("Insert MC Username");
-        textArea.append("Welcome to Logan's skyblock tracker! Select a player to track.");
+        auctionOutput.append("Welcome to Logan's skyblock tracker! Select a player to track.");
         itemSelect.append("lalalllllllllllllllllllllllllllllllllllllllllllllllllllllllllll");
 
         playerSelect.addMouseListener(new MouseAdapter() {
@@ -66,11 +66,11 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                    textArea.setText("");
+                    auctionOutput.setText("");
                     skyblockTracker.playerID = skyblockTracker.getUuid(playerSelect.getText());
-                    textArea.append(playerSelect.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
-                    textArea.append("Ten Mose Recent Auctions: \n\n");
-                    textArea.append(skyblockTracker.getTenAuctions());
+                    auctionOutput.append(playerSelect.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
+                    auctionOutput.append("Ten Mose Recent Auctions: \n\n");
+                    auctionOutput.append(skyblockTracker.getTenAuctions());
                 
             }
         });
@@ -80,13 +80,13 @@ public class Main {
         // Add and set everything
         panel.add(playerSelect);
         panel.add(playerSelect);
-        panel.add(textArea);
+        panel.add(auctionOutput);
         panel.add(runButton);
         panel.add(itemSelect);
-        textArea.setBackground(Color.DARK_GRAY);
-        textArea.setForeground(Color.WHITE);
-        textArea.setFont(customFont);
-        textArea.setBorder(new LineBorder(Color.WHITE, 2));
+        auctionOutput.setBackground(Color.DARK_GRAY);
+        auctionOutput.setForeground(Color.WHITE);
+        auctionOutput.setFont(customFont);
+        auctionOutput.setBorder(new LineBorder(Color.WHITE, 2));
         playerSelect.setBackground(Color.DARK_GRAY);
         playerSelect.setForeground(Color.WHITE);
         playerSelect.setFont(customFont);
