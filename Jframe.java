@@ -4,7 +4,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -92,6 +91,7 @@ public class Jframe {
         auctionOutput.setForeground(Color.WHITE);
         auctionOutput.setFont(customFont);
         auctionOutput.setBorder(new LineBorder(Color.WHITE, 2));
+        auctionOutput.setEditable(false);
         playerSelect.setBackground(Color.DARK_GRAY);
         playerSelect.setForeground(Color.WHITE);
         playerSelect.setFont(customFont);
@@ -185,6 +185,7 @@ public class Jframe {
         itemOutput.setForeground(Color.WHITE);
         itemOutput.setFont(customFont);
         itemOutput.setBorder(new LineBorder(Color.WHITE, 2));
+        itemOutput.setEditable(false);
         itemSelect.setBackground(Color.DARK_GRAY);
         itemSelect.setForeground(Color.WHITE);
         itemSelect.setFont(customFont);
