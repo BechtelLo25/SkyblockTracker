@@ -14,7 +14,8 @@ import java.awt.event.ActionListener;
 
 public class Jframe {
 
-    static SkyblockTracker skyblockTracker = new SkyblockTracker();
+    static AuctionTracker skyblockTracker = new AuctionTracker();
+    static LowestBinTracker lowestBinTracker = new LowestBinTracker();
     
     public void createAuctionTrackerJframe() {
             
@@ -86,7 +87,7 @@ public class Jframe {
         panel.add(playerSelect);
         panel.add(auctionOutput);
         panel.add(runButton);
-        panel.add(backButton, BorderLayout.SOUTH);
+        panel.add(backButton);
         auctionOutput.setBackground(Color.DARK_GRAY);
         auctionOutput.setForeground(Color.WHITE);
         auctionOutput.setFont(customFont);
@@ -153,9 +154,9 @@ public class Jframe {
             public void actionPerformed(ActionEvent e) {
 
                     itemOutput.setText("");
-                    skyblockTracker.playerID = skyblockTracker.getUuid(itemSelect.getText());
-                    itemOutput.append(itemSelect.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
-                    itemOutput.append("Ten Mose Recent Auctions: \n\n");
+                    lowestBinTracker.itemID = lowestBinTracker.getItemID(itemSelect.getText());
+                    itemOutput.append(itemSelect.getText() + " selected!\n\nItem ID: " + lowestBinTracker.itemID + "\n\n");
+                    itemOutput.append("Lowest Bin: \n\n");
                     itemOutput.append(skyblockTracker.getTenAuctions());
                 
             }
