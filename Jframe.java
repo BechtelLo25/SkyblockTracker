@@ -141,7 +141,6 @@ public class Jframe {
         itemSelect.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // Check if the mouse event occurred within the JTextArea
                 if (itemSelect.getBounds().contains(e.getPoint())) {
                     itemSelect.setText("");
                 }
@@ -157,7 +156,9 @@ public class Jframe {
                     lowestBinTracker.itemID = lowestBinTracker.getItemID(itemSelect.getText());
                     itemOutput.append(itemSelect.getText() + " selected!\n\nItem ID: " + lowestBinTracker.itemID + "\n\n");
                     itemOutput.append("Lowest Bin: \n\n");
-                    itemOutput.append(skyblockTracker.getTenAuctions());
+                    itemOutput.append(lowestBinTracker.getLowestBin() + "\n\n");
+                    itemOutput.append("Second Lowest Bin: \n\n");
+                    itemOutput.append(lowestBinTracker.getSecondLowestBin());
                 
             }
         });

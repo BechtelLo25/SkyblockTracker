@@ -5,6 +5,8 @@ import java.net.http.HttpResponse;
 
 public class AuctionTracker {
 
+    public CommaAdder CommaAdder = new CommaAdder();
+
     public String playerID;
 
     public String getUuid(String name) {
@@ -89,65 +91,65 @@ public class AuctionTracker {
                 firstAuction += "Has not sold\n";
             }
             else {
-                firstAuction += "Sold for " + firstAuctionInfo.substring(firstAuctionInfo.indexOf("highestBid") + 12, firstAuctionInfo.indexOf("itemName") - 2) + "\n";
+                firstAuction += "Sold for " + CommaAdder.addCommas(firstAuctionInfo.substring(firstAuctionInfo.indexOf("highestBid") + 12, firstAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if(secondAuctionInfo.substring(secondAuctionInfo.indexOf("highestBid") + 12, secondAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 secondAuction += "Has not sold\n";
             }
             else {
-                secondAuction += "Sold for " + secondAuctionInfo.substring(secondAuctionInfo.indexOf("highestBid") + 12, secondAuctionInfo.indexOf("itemName") - 2) + "\n";
+                secondAuction += "Sold for " + CommaAdder.addCommas(secondAuctionInfo.substring(secondAuctionInfo.indexOf("highestBid") + 12, secondAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if(thirdAuctionInfo.substring(thirdAuctionInfo.indexOf("highestBid") + 12, thirdAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 thirdAuction += "Has not sold\n";
             }
             else {
-                thirdAuction += "Sold for " + thirdAuctionInfo.substring(thirdAuctionInfo.indexOf("highestBid") + 12, thirdAuctionInfo.indexOf("itemName") - 2) + "\n";
+                thirdAuction += "Sold for " + CommaAdder.addCommas(thirdAuctionInfo.substring(thirdAuctionInfo.indexOf("highestBid") + 12, thirdAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if(fourthAuctionInfo.substring(fourthAuctionInfo.indexOf("highestBid") + 12, fourthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 fourthAuction += "Has not sold\n";
             }
             else {
-                fourthAuction += "Sold for " + fourthAuctionInfo.substring(fourthAuctionInfo.indexOf("highestBid") + 12, fourthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                fourthAuction += "Sold for " + CommaAdder.addCommas(fourthAuctionInfo.substring(fourthAuctionInfo.indexOf("highestBid") + 12, fourthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if(fifthAuctionInfo.substring(fifthAuctionInfo.indexOf("highestBid") + 12, fifthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 fifthAuction += "Has not sold\n";
             }
             else {
-                fifthAuction += "Sold for " + fifthAuctionInfo.substring(fifthAuctionInfo.indexOf("highestBid") + 12, fifthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                fifthAuction += "Sold for " + CommaAdder.addCommas(fifthAuctionInfo.substring(fifthAuctionInfo.indexOf("highestBid") + 12, fifthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if (sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("highestBid") + 12, sixthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 sixthAuction += "Has not sold\n";
             } else {
-                sixthAuction += "Sold for " + sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("highestBid") + 12, sixthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                sixthAuction += "Sold for " + CommaAdder.addCommas(sixthAuctionInfo.substring(sixthAuctionInfo.indexOf("highestBid") + 12, sixthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if (seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("highestBid") + 12, seventhAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 seventhAuction += "Has not sold\n";
             } else {
-                seventhAuction += "Sold for " + seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("highestBid") + 12, seventhAuctionInfo.indexOf("itemName") - 2) + "\n";
+                seventhAuction += "Sold for " + CommaAdder.addCommas(seventhAuctionInfo.substring(seventhAuctionInfo.indexOf("highestBid") + 12, seventhAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if (eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("highestBid") + 12, eighthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 eighthAuction += "Has not sold\n";
             } else {
-                eighthAuction += "Sold for " + eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("highestBid") + 12, eighthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                eighthAuction += "Sold for " + CommaAdder.addCommas(eighthAuctionInfo.substring(eighthAuctionInfo.indexOf("highestBid") + 12, eighthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if (ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("highestBid") + 12, ninthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 ninthAuction += "Has not sold\n";
             } else {
-                ninthAuction += "Sold for " + ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("highestBid") + 12, ninthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                ninthAuction += "Sold for " + CommaAdder.addCommas(ninthAuctionInfo.substring(ninthAuctionInfo.indexOf("highestBid") + 12, ninthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
 
             if (tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("highestBid") + 12, tenthAuctionInfo.indexOf("highestBid") + 13).equals("0")) {
                 tenthAuction += "Has not sold\n";
             } else {
-                tenthAuction += "Sold for " + tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("highestBid") + 12, tenthAuctionInfo.indexOf("itemName") - 2) + "\n";
+                tenthAuction += "Sold for " + CommaAdder.addCommas(tenthAuctionInfo.substring(tenthAuctionInfo.indexOf("highestBid") + 12, tenthAuctionInfo.indexOf("itemName") - 2)) + "\n";
             }
             
             return firstAuction + secondAuction + thirdAuction + fourthAuction + fifthAuction + sixthAuction + seventhAuction + eighthAuction + ninthAuction + tenthAuction;

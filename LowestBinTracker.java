@@ -4,9 +4,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class LowestBinTracker {
+    
+    public CommaAdder CommaAdder = new CommaAdder();
 
     public String itemID;
-    
+
     public String getItemID(String itemName) {
         
         String finalName = itemName.replaceAll(" ", "%20");
@@ -23,9 +25,7 @@ public class LowestBinTracker {
     
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            System.out.println(response.body());
-
-            return response.body().substring(response.body().indexOf("id") + 5, response.body().indexOf("type") - 3);
+            return (response.body().substring(response.body().indexOf("id") + 5, response.body().indexOf("type") - 3));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -34,8 +34,8 @@ public class LowestBinTracker {
         return "Connect to wifi dummy";
     }
 
-    public String getTenAuctions() {
-        /* String apiUrl = "https://sky.coflnet.com/api/player/" + itemID + "/auctions?page=0&=string&=string&=string";
+    public String getLowestBin() {
+        String apiUrl = "https://sky.coflnet.com/api/item/price/" + getItemID(itemID) + "/bin?=string&=string&=string";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -48,11 +48,34 @@ public class LowestBinTracker {
     
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-            String entireResponse = response.body();
+            return CommaAdder.addCommas(response.body().substring(response.body().indexOf("lowest") + 8, response.body().indexOf("uuid") - 2));
 
         } catch (Exception e) {
             e.printStackTrace();
-        } */
+        } 
         return "Connect to wifi dummy"; 
     }
+
+    public String getSecondLowestBin() {
+        String apiUrl = "https://sky.coflnet.com/api/item/price/" + getItemID(itemID) + "/bin?=string&=string&=string";
+
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+    
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(apiUrl))
+                    .header("accept", "text/plain")
+                    .GET()
+                    .build();
+    
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+            return CommaAdder.addCommas(response.body().substring(response.body().indexOf("secondLowest") + 14, response.body().indexOf("}")));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } 
+        return "Connect to wifi dummy"; 
+    }
+
 }
