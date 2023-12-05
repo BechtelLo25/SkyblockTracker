@@ -9,7 +9,7 @@ public class LowestBinTracker {
     
     public String getItemID(String itemName) {
         
-        String finalName = itemName.substring(0, itemName.indexOf(" ")) + "%20" + itemName.substring(itemName.indexOf(" ") + 1);
+        String finalName = itemName.replaceAll(" ", "%20");
         String apiUrl = "https://sky.coflnet.com/api/item/search/" + finalName;
 
         try {
@@ -35,7 +35,7 @@ public class LowestBinTracker {
     }
 
     public String getTenAuctions() {
-        String apiUrl = "https://sky.coflnet.com/api/player/" + itemID + "/auctions?page=0&=string&=string&=string";
+        /* String apiUrl = "https://sky.coflnet.com/api/player/" + itemID + "/auctions?page=0&=string&=string&=string";
 
         try {
             HttpClient client = HttpClient.newHttpClient();
@@ -52,7 +52,7 @@ public class LowestBinTracker {
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
-        return "Connect to wifi dummy";
+        } */
+        return "Connect to wifi dummy"; 
     }
 }
