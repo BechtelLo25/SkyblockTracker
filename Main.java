@@ -18,6 +18,8 @@ public class Main {
 
         JButton auctionButton = new JButton("Auction Tracker");
         JButton lowestBinButton = new JButton("Lowest Bin Tracker");
+        JButton priceHistoryButton = new JButton("Lowest Bin Tracker");
+
 
         JPanel panel = new JPanel(){
         @Override
@@ -48,10 +50,19 @@ public class Main {
             }
         });
 
+        priceHistoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jframe.createPriceHistoryJframe();
+                frame.dispose();
+            }
+        });
+
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
 
         panel.add(auctionButton);
         panel.add(lowestBinButton);
+        panel.add(priceHistoryButton);
 
         auctionButton.setBackground(Color.DARK_GRAY);
         auctionButton.setForeground(Color.WHITE);
@@ -61,6 +72,10 @@ public class Main {
         lowestBinButton.setForeground(Color.WHITE);
         lowestBinButton.setFont(customFont);
         lowestBinButton.setBorder(new LineBorder(Color.WHITE, 2));
+        priceHistoryButton.setBackground(Color.DARK_GRAY);
+        priceHistoryButton.setForeground(Color.WHITE);
+        priceHistoryButton.setFont(customFont);
+        priceHistoryButton.setBorder(new LineBorder(Color.WHITE, 2));
         frame.getContentPane().add(panel);
         frame.setSize(1000, 600);
         frame.setLocationRelativeTo(null);
