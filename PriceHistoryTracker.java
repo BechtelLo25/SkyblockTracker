@@ -80,9 +80,9 @@ public class PriceHistoryTracker {
             HttpResponse<String> monthResponse = client.send(monthRequest, HttpResponse.BodyHandlers.ofString());
             HttpResponse<String> yearResponse = client.send(yearRequest, HttpResponse.BodyHandlers.ofString());
 
-            String buyAndSellPriceCurrent = currentResponse.body();
+            String buyAndSellPriceCurrent = "Current Sell Price: " + currentResponse.body().substring(currentResponse.body().indexOf("sell") + 6, currentResponse.body().indexOf("buy") -2) + "\n" + "Current Buy Price: " + currentResponse.body().substring(currentResponse.body().indexOf("buy") + 6, currentResponse.body().indexOf("avail") -2) + "\n\n";
 
-            return currentResponse.body();
+            return buyAndSellPriceCurrent;
         } catch (Exception e) {
             e.printStackTrace();
         } 

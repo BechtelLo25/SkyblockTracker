@@ -251,9 +251,6 @@ public class Jframe {
                     itemOutput.setText("");
                     priceHistoryTracker.itemID = priceHistoryTracker.getItemID(itemSelect.getText());
                     itemOutput.append(itemSelect.getText() + " selected!\n\nItem ID: " + priceHistoryTracker.itemID + "\n\n");
-                    itemOutput.append("Current Price: \n\n");
-                    itemOutput.append(priceHistoryTracker.getPriceHistory() + "\n\n");
-                    itemOutput.append("Price One Day Ago: \n\n");
                     itemOutput.append(priceHistoryTracker.getPriceHistory());
                 
             }
