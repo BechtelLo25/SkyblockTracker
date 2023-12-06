@@ -18,7 +18,7 @@ public class Main {
 
         JButton auctionButton = new JButton("Auction Tracker");
         JButton lowestBinButton = new JButton("Lowest Bin Tracker");
-        JButton priceHistoryButton = new JButton("Lowest Bin Tracker");
+        JButton priceHistoryButton = new JButton("Price History Tracker");
 
 
         JPanel panel = new JPanel(){
