@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class Main {
 
-    static Jframe jframe = new Jframe();
+    static TrackerJframes jframe = new TrackerJframes();
 
     public static void main(String[] args) {
 
