@@ -64,7 +64,7 @@ public class Jframe {
         });
 
         // Add action listener to the button
-        runButton.addActionListener(new ActionListener() {
+        ActionListener runButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -75,7 +75,9 @@ public class Jframe {
                     output.append(skyblockTracker.getTenAuctions());
                 
             }
-        });
+        };
+
+        runButton.addActionListener(runButtonActionListener);
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -137,7 +139,7 @@ public class Jframe {
         });
 
         // Add action listener to the button
-        runButton.addActionListener(new ActionListener() {
+        ActionListener runButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -150,7 +152,9 @@ public class Jframe {
                     output.append(lowestBinTracker.getSecondLowestBin());
                 
             }
-        });
+        };
+
+        runButton.addActionListener(runButtonActionListener);
 
         backButton.addActionListener(new ActionListener() {
             @Override
@@ -212,7 +216,7 @@ public class Jframe {
         });
 
         // Add action listener to the button
-        runButton.addActionListener(new ActionListener() {
+        ActionListener runButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -222,7 +226,9 @@ public class Jframe {
                     output.append(priceHistoryTracker.getPriceHistory());
                 
             }
-        });
+        };
+
+        runButton.addActionListener(runButtonActionListener);
 
         backButton.addActionListener(new ActionListener() {
             @Override
