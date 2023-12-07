@@ -34,18 +34,17 @@ public class TrackerJframes {
         }
     };;
 
-        public TrackerJframes() {
+    public TrackerJframes() {
             
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(1000, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1000, 600);
+    }
 
-        }
-
-        // Initializing JFrame Components
-        JTextArea input = new JTextArea();
-        JTextArea output = new JTextArea();
-        JButton runButton = new JButton(" Run ");
-        JButton backButton = new JButton(" Back ");
+    // Initializing JFrame Components
+    JTextArea input = new JTextArea();
+    JTextArea output = new JTextArea();
+    JButton runButton = new JButton(" Run ");
+    JButton backButton = new JButton(" Back ");
     
     public void createAuctionTrackerJframe() {
 
@@ -59,7 +58,6 @@ public class TrackerJframes {
 
         addListeners();
         configureComponents();
-        
     }
 
     public void createLowestBinJframe() {
@@ -74,7 +72,6 @@ public class TrackerJframes {
 
         addListeners();
         configureComponents();
-
     }
 
     public void createPriceHistoryJframe() {
@@ -89,7 +86,6 @@ public class TrackerJframes {
 
         addListeners();
         configureComponents();
-        
     }
 
     public void configureComponents() {
@@ -121,7 +117,6 @@ public class TrackerJframes {
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));
         frame.setVisible(true);
-
     }
 
     public void addListeners() {
@@ -143,14 +138,12 @@ public class TrackerJframes {
                     output.setText("");
                     if(currentFrame.equals("Auction Tracker")) {
 
-                        output.setText("");
                         skyblockTracker.playerID = skyblockTracker.getUuid(input.getText());
                         output.append(input.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
                         output.append("Ten Most Recent Auctions: \n\n");
                         output.append(skyblockTracker.getTenAuctions());
                     } else if(currentFrame.equals("Lowest Bin Tracker")) {
 
-                        output.setText("");
                         lowestBinTracker.itemID = lowestBinTracker.getItemID(input.getText());
                         output.append(input.getText() + " selected!\n\nItem ID: " + lowestBinTracker.itemID + "\n\n");
                         output.append("Lowest Bin: \n\n");
@@ -159,7 +152,6 @@ public class TrackerJframes {
                         output.append(lowestBinTracker.getSecondLowestBin());
                     } else {
 
-                        output.setText("");
                         priceHistoryTracker.itemID = priceHistoryTracker.getItemID(input.getText());
                         output.append(input.getText() + " selected!\n\nItem ID: " + priceHistoryTracker.itemID + "\n\n");
                         output.append(priceHistoryTracker.getPriceHistory());
