@@ -81,14 +81,17 @@ public class PriceHistoryTracker {
             HttpResponse<String> yearResponse = client.send(allRequest, HttpResponse.BodyHandlers.ofString());
 
             String buyAndSellPriceCurrent = "Current Sell Price: " + CommaAdder.addCommas(currentResponse.body().substring(currentResponse.body().indexOf("sell") + 6, currentResponse.body().indexOf("buy") - 4)) + "\n\n";
-            String buyAndSellPriceDaySub = "One Day Ago: " + CommaAdder.addCommas(dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5));
-            // String buyAndSellPriceWeekSub = "One Day Ago: " + CommaAdder.addCommas(dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5));
-            // String buyAndSellPriceMonthSub = "One Month Ago: " + CommaAdder.addCommas(monthResponse.body().substring(monthResponse.body().indexOf("avg") + 5));
-            // String buyAndSellPriceYearSub = "One Year Ago: " + CommaAdder.addCommas(yearResponse.body().substring(yearResponse.body().indexOf("avg") + 5));
+            String buyAndSellPriceDaySub = dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5);
+            String buyAndSellPriceWeekSub = weekResponse.body().substring(weekResponse.body().indexOf("avg") + 5);
+            String buyAndSellPriceMonthSub = monthResponse.body().substring(monthResponse.body().indexOf("avg") + 5);
+            String buyAndSellPriceYearSub = yearResponse.body().substring(yearResponse.body().indexOf("avg") + 5);
 
-            String buyAndSellPriceDay = buyAndSellPriceDaySub.substring(0, buyAndSellPriceDaySub.indexOf("."));
+            String buyAndSellPriceDay = "One Day Ago: " + CommaAdder.addCommas(buyAndSellPriceDaySub.substring(0, buyAndSellPriceDaySub.indexOf("."))) + "\n\n";
+            String buyAndSellPriceWeek = "One Week Ago: " + CommaAdder.addCommas(buyAndSellPriceWeekSub.substring(0, buyAndSellPriceWeekSub.indexOf("."))) + "\n\n";
+            String buyAndSellPriceMonth = "One Month Ago: " + CommaAdder.addCommas(buyAndSellPriceMonthSub.substring(0, buyAndSellPriceMonthSub.indexOf("."))) + "\n\n";
+            String buyAndSellPriceYear = "One Year Ago: " + CommaAdder.addCommas(buyAndSellPriceYearSub.substring(0, buyAndSellPriceYearSub.indexOf("."))) + "\n\n";
 
-            return buyAndSellPriceCurrent + buyAndSellPriceDay;
+            return buyAndSellPriceCurrent + buyAndSellPriceDay + buyAndSellPriceWeek + buyAndSellPriceMonth+ buyAndSellPriceYear;
         } catch (Exception e) {
             e.printStackTrace();
         } 

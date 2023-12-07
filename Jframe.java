@@ -90,35 +90,8 @@ public class Jframe {
             }
         });
 
-        Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
+        configureComponents();
         
-        // Add and set everything
-        panel.add(input);
-        panel.add(input);
-        panel.add(output);
-        panel.add(runButton);
-        panel.add(backButton);
-        output.setBackground(Color.DARK_GRAY);
-        output.setForeground(Color.WHITE);
-        output.setFont(customFont);
-        output.setBorder(new LineBorder(Color.WHITE, 4));
-        output.setEditable(false);
-        input.setBackground(Color.DARK_GRAY);
-        input.setForeground(Color.WHITE);
-        input.setFont(customFont);
-        input.setBorder(new LineBorder(Color.WHITE, 2));
-        runButton.setBackground(Color.DARK_GRAY);
-        runButton.setForeground(Color.WHITE);
-        runButton.setFont(customFont);
-        runButton.setBorder(new LineBorder(Color.WHITE, 2));
-        backButton.setBackground(Color.DARK_GRAY);
-        backButton.setForeground(Color.WHITE);
-        backButton.setFont(customFont);
-        backButton.setBorder(new LineBorder(Color.WHITE, 2));
-        frame.setContentPane(panel);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(new Color(40, 40, 40));
-        frame.setVisible(true);
     }
 
     public void createLowestBinJframe() {
@@ -165,35 +138,7 @@ public class Jframe {
             }
         });
 
-        Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
-        
-        // Add and set everything
-        panel.add(input);
-        panel.add(input);
-        panel.add(output);
-        panel.add(runButton);
-        panel.add(backButton);
-        output.setBackground(Color.DARK_GRAY);
-        output.setForeground(Color.WHITE);
-        output.setFont(customFont);
-        output.setBorder(new LineBorder(Color.WHITE, 4));
-        output.setEditable(false);
-        input.setBackground(Color.DARK_GRAY);
-        input.setForeground(Color.WHITE);
-        input.setFont(customFont);
-        input.setBorder(new LineBorder(Color.WHITE, 2));
-        runButton.setBackground(Color.DARK_GRAY);
-        runButton.setForeground(Color.WHITE);
-        runButton.setFont(customFont);
-        runButton.setBorder(new LineBorder(Color.WHITE, 2));
-        backButton.setBackground(Color.DARK_GRAY);
-        backButton.setForeground(Color.WHITE);
-        backButton.setFont(customFont);
-        backButton.setBorder(new LineBorder(Color.WHITE, 2));
-        frame.setContentPane(panel);
-        frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(new Color(40, 40, 40));
-        frame.setVisible(true);
+        configureComponents();
 
     }
 
@@ -239,9 +184,13 @@ public class Jframe {
             }
         });
 
+        configureComponents();
+        
+    }
+
+    public void configureComponents() {
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
-        // Add and set everything
         panel.add(input);
         panel.add(input);
         panel.add(output);
@@ -268,6 +217,7 @@ public class Jframe {
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(40, 40, 40));
         frame.setVisible(true);
+
     }
 }
 
