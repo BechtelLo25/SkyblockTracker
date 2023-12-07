@@ -81,12 +81,14 @@ public class PriceHistoryTracker {
             HttpResponse<String> yearResponse = client.send(allRequest, HttpResponse.BodyHandlers.ofString());
 
             String buyAndSellPriceCurrent = "Current Sell Price: " + CommaAdder.addCommas(currentResponse.body().substring(currentResponse.body().indexOf("sell") + 6, currentResponse.body().indexOf("buy") - 4)) + "\n\n";
-            String buyAndSellPriceDay = "One Day Ago: " + CommaAdder.addCommas(dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5, dayResponse.body().indexOf("volume") - 4)) + "\n\n";
-            String buyAndSellPriceWeek = "One Week Ago: " + CommaAdder.addCommas(weekResponse.body().substring(weekResponse.body().indexOf("avg") + 5, weekResponse.body().indexOf("volume") - 4)) + "\n\n";
-            String buyAndSellPriceMonth = "One Month Ago: " + CommaAdder.addCommas(monthResponse.body().substring(monthResponse.body().indexOf("avg") + 5, monthResponse.body().indexOf("volume") - 4)) + "\n\n";
-            String buyAndSellPriceYear = "One Year Ago: " + CommaAdder.addCommas(yearResponse.body().substring(yearResponse.body().indexOf("avg") + 5, yearResponse.body().indexOf("volume") - 4)) + "\n\n";
+            String buyAndSellPriceDaySub = "One Day Ago: " + CommaAdder.addCommas(dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5));
+            // String buyAndSellPriceWeekSub = "One Day Ago: " + CommaAdder.addCommas(dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5));
+            // String buyAndSellPriceMonthSub = "One Month Ago: " + CommaAdder.addCommas(monthResponse.body().substring(monthResponse.body().indexOf("avg") + 5));
+            // String buyAndSellPriceYearSub = "One Year Ago: " + CommaAdder.addCommas(yearResponse.body().substring(yearResponse.body().indexOf("avg") + 5));
 
-            return buyAndSellPriceCurrent + buyAndSellPriceDay + buyAndSellPriceWeek + buyAndSellPriceMonth + buyAndSellPriceYear;
+            String buyAndSellPriceDay = buyAndSellPriceDaySub.substring(0, buyAndSellPriceDaySub.indexOf("."));
+
+            return buyAndSellPriceCurrent + buyAndSellPriceDay;
         } catch (Exception e) {
             e.printStackTrace();
         } 

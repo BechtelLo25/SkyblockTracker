@@ -71,7 +71,7 @@ public class Jframe {
                     output.setText("");
                     skyblockTracker.playerID = skyblockTracker.getUuid(input.getText());
                     output.append(input.getText() + " selected!\n\nPlayer Uuid: " + skyblockTracker.playerID + "\n\n");
-                    output.append("Ten Mose Recent Auctions: \n\n");
+                    output.append("Ten Most Recent Auctions: \n\n");
                     output.append(skyblockTracker.getTenAuctions());
                 
             }
