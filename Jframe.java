@@ -85,12 +85,12 @@ public class Jframe {
 
                 Main.main(null);
                 frame.dispose();
+                runButton.removeActionListener(runButtonActionListener);
 
             }
         });
 
         Font customFont = new Font("Trebuchet MS", Font.BOLD, 20);
-        Font backButtonFont = new Font("Trebuchet MS", Font.BOLD, 20);
         
         // Add and set everything
         panel.add(input);
@@ -113,7 +113,7 @@ public class Jframe {
         runButton.setBorder(new LineBorder(Color.WHITE, 2));
         backButton.setBackground(Color.DARK_GRAY);
         backButton.setForeground(Color.WHITE);
-        backButton.setFont(backButtonFont);
+        backButton.setFont(customFont);
         backButton.setBorder(new LineBorder(Color.WHITE, 2));
         frame.setContentPane(panel);
         frame.setLocationRelativeTo(null);
@@ -142,7 +142,6 @@ public class Jframe {
         ActionListener runButtonActionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                     output.setText("");
                     lowestBinTracker.itemID = lowestBinTracker.getItemID(input.getText());
                     output.append(input.getText() + " selected!\n\nItem ID: " + lowestBinTracker.itemID + "\n\n");
@@ -162,7 +161,7 @@ public class Jframe {
 
                 Main.main(null);
                 frame.dispose();
-
+                runButton.removeActionListener(runButtonActionListener);
             }
         });
 
@@ -236,7 +235,7 @@ public class Jframe {
 
                 Main.main(null);
                 frame.dispose();
-
+                runButton.removeActionListener(runButtonActionListener);
             }
         });
 
@@ -245,9 +244,9 @@ public class Jframe {
         // Add and set everything
         panel.add(input);
         panel.add(input);
-        panel.add(input);
+        panel.add(output);
         panel.add(runButton);
-        panel.add(backButton, BorderLayout.SOUTH);
+        panel.add(backButton);
         output.setBackground(Color.DARK_GRAY);
         output.setForeground(Color.WHITE);
         output.setFont(customFont);
