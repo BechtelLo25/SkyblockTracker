@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 public class Main {
 
     static TrackerJframes jframe = new TrackerJframes();
-
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Logan's Skyblock Tracker");
@@ -19,7 +18,6 @@ public class Main {
         JButton auctionButton = new JButton("Auction Tracker");
         JButton lowestBinButton = new JButton("Lowest Bin Tracker");
         JButton priceHistoryButton = new JButton("Price History Tracker");
-
 
         JPanel panel = new JPanel(){
         @Override
@@ -81,5 +79,4 @@ public class Main {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-
 }
