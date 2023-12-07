@@ -50,8 +50,7 @@ public class TrackerJframes {
 
         currentFrame = "Auction Tracker";
             
-        input.setText("");
-        output.setText("");
+        resetTexts();
         
         input.append("Insert MC Username");
         output.append("Welcome to Logan's skyblock tracker! Select a player to track.");
@@ -64,8 +63,7 @@ public class TrackerJframes {
 
         currentFrame = "Lowest Bin Tracker";
 
-        input.setText("");
-        output.setText("");
+        resetTexts();
 
         input.append("Insert Item Name");
         output.append("Welcome to Logan's Lowest Bin Tracker! Select an Item to Track.");
@@ -78,8 +76,7 @@ public class TrackerJframes {
 
         currentFrame = "Price History Tracker";
 
-        input.setText("");
-        output.setText("");
+        resetTexts();
 
         input.append("Insert Item Name");
         output.append("Welcome to Logan's Price History Tracker! Select an Item to Track.");
@@ -171,5 +168,11 @@ public class TrackerJframes {
                 runButton.removeActionListener(runButtonActionListener);
             }
         });
+    }
+
+    public void resetTexts() {
+
+        input.setText("");
+        output.setText("");
     }
 }
