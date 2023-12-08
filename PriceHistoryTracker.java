@@ -4,9 +4,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 public class PriceHistoryTracker {
-    
-    public CommaAdder CommaAdder = new CommaAdder();
 
+    public CommaAdder CommaAdder = new CommaAdder();
+    
     public String itemID;
 
     public String getItemID(String itemName) {
@@ -80,7 +80,7 @@ public class PriceHistoryTracker {
             HttpResponse<String> monthResponse = client.send(monthRequest, HttpResponse.BodyHandlers.ofString());
             HttpResponse<String> yearResponse = client.send(allRequest, HttpResponse.BodyHandlers.ofString());
 
-            String buyAndSellPriceCurrent = "Current Sell Price: " + CommaAdder.addCommas(currentResponse.body().substring(currentResponse.body().indexOf("sell") + 6, currentResponse.body().indexOf("buy") - 4)) + "\n\n";
+            String buyAndSellPriceCurrent = "Current Price: " + CommaAdder.addCommas(currentResponse.body().substring(currentResponse.body().indexOf("sell") + 6, currentResponse.body().indexOf("buy") - 4)) + "\n\n";
             String buyAndSellPriceDaySub = dayResponse.body().substring(dayResponse.body().indexOf("avg") + 5);
             String buyAndSellPriceWeekSub = weekResponse.body().substring(weekResponse.body().indexOf("avg") + 5);
             String buyAndSellPriceMonthSub = monthResponse.body().substring(monthResponse.body().indexOf("avg") + 5);
@@ -97,5 +97,4 @@ public class PriceHistoryTracker {
         } 
         return "Connect to wifi dummy"; 
     }
-
 }
