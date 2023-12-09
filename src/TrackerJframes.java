@@ -1,3 +1,4 @@
+package src;
 import java.awt.*;
 
 import javax.swing.JButton;
@@ -5,6 +6,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
+
+import Trackers.AuctionTracker;
+import Trackers.LowestBinTracker;
+import Trackers.PriceHistoryTracker;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
